@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <img src="" alt="" id="img">
+    <button id="button"> Get Dog</button>
+</body>
+<script>
+    document.getElementById('root')
+    document.addEventListener('button', () =>{
+        function getDog(){
+            fetch('https://random.dog/woof.json')
+            .then(response => response.json())
+            .then(data => {
+                const img = document.createElement('img');
+            }, img.src = data.url)
+        }
+
+    })
+</script>
+</html>

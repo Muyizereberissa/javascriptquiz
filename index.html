@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Task</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body id="body">
+    <div class="root">
+        <img src="" alt="" id="img">
+        <button id="button">Get Dog</button>
+    </div>
+</body>
+
+<script>
+    document.getElementById('button').addEventListener('click', onclick => getDog())
+    document.getElementById('img').addEventListener('click', getDog)
+
+    function getDog() {
+        fetch('https://random.dog/woof.json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('img').src = data.url
+
+            })
+    }
+
+</script>
+
+</html>
